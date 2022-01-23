@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Flamingo_Airways.Models.ReservationModel>
+
+@{
+    ViewBag.Title = "ShowBookings";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>ShowBookings</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Userid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flightno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nooftickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rdate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Userid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flightno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nooftickets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rdate)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back to home", "AdminHome","Admin")

@@ -1,0 +1,34 @@
+﻿@model Flamingo_Airways.Models.NoOfTicketsModel
+@{
+    ViewBag.Title = "BookFlights";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>Confirm Booking</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nooftickets, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nooftickets, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <h3>Are you sure want to book the flight?</h3>
+                <input type="submit" value="Confirm Booking" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@Html.ActionLink("Back to Search Flights", "Index")

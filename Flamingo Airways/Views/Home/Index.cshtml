@@ -1,0 +1,75 @@
+﻿<!--@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 style="font-family:'Comic Sans MS'">Welcome to Flamingo Airways</h1>
+    <br />-->
+    @*<p style="align-content:center;font-size:medium;text-align:center">Book Flights for lowest costs and enjoy your journey</p>*@
+    <!--<hr />
+
+    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align:center">Login from your registered Email address or Register now to view flights and book tickets</p>
+</div>-->
+
+<html>
+<head>
+    <style>
+        div.transbox {
+            background-color: black;
+            border: 1px solid black;
+            opacity: 0.6;
+            text-align: center;
+            padding-bottom: 20px;
+            text-decoration-color: red;
+        }
+
+            div.transbox p {
+                margin-top: 5%;
+                font-weight: bold;
+                font-family: "Viner Hand ITC";
+                font-size: 50px;
+                color: wheat;
+                text-align: center;
+            }
+
+        div.row h2 {
+            margin-top: 5%;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25px;
+            color: black;
+        }
+
+        div.row p {
+            font-weight: bold;
+            font-family: Verdana;
+            font-size: 15px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background">
+        <div class="transbox">
+
+            <p>Flamingo Airlines</p>
+            <div class="badge">Let Your Dreams Fly </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <center>
+            <h2>Welcome To  Flamingo Airlines</h2>
+            <p>
+                Flamingo provides you quick and easy Flight Booking at affordable Prices.
+                Book now and let's fly.
+                <br/>So what are you waiting for...
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action("LoginView", "Login")">Book Now&raquo;</a></p>
+        </center>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model Flamingo_Airways.Models.LoginModel
+
+@{
+    ViewBag.Title = "LoginView";
+}
+
+<h2>You have an account already?</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Login Here!</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+
+      
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pwd, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "form-control" } })
+                <span class="alert-danger">@ViewBag.errormsg</span>
+                <br />
+                @Html.ValidationMessageFor(model => model.Pwd, "", new { @class = "text-danger" })
+                @Html.ActionLink("Forget Password?Reset Here", "ForgetPass")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+<div>
+    <h3>
+        Are you an administrator? &nbsp; &nbsp;
+        @Html.ActionLink("Login As Admin", "AdminLogin","Admin")
+    </h3>
+
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

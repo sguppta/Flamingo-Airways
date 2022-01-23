@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "CancelTicket";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>Ticket Cancel page</h2>
+
+<span class="label label-warning">
+    Note that only 60% amount will be refunded
+    on cencelling the ticket
+</span>
+
+<h4>Are you sure want to cancel your ticket?</h4>
+<div style="display:inline">
+    @Html.ActionLink("Yes", "Cancelconfirm")
+</div>
+&nbsp; &nbsp;
+<div style="display:inline">
+    @Html.ActionLink("No", "TicketView")
+</div>

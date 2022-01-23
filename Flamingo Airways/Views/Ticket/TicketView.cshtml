@@ -1,0 +1,103 @@
+﻿@model Flamingo_Airways.Models.TicketModel
+
+@{
+    ViewBag.Title = "TicketView";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>Flamingo Airways</h2>
+
+<div>
+    <h4>Boarding Ticket</h4>
+    <br />
+    <p class="alert alert-success"> Dear <strong> @ViewBag.username </strong>, Your booking is confirmed. </p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.flightno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrivalcity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrivalcity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departcity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departcity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrivaltime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrivaltime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departtime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departtime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nooftickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nooftickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Back", "PaymentSuccess", "User")
+    <h4>Want to cancel your ticket?</h4>
+    @Html.ActionLink("Cancel Ticket", "CancelTicket")
+
+</p>

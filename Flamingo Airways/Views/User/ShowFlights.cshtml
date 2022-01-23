@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Flamingo_Airways.Models.FlightModel>
+
+@{
+    ViewBag.Title = "ShowFlights";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>ShowFlights</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Flightno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arrival_Airport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Depart_Airport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arrival_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Depart_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seating_Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availaible_Seat)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flightno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival_Airport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depart_Airport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depart_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seating_Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Availaible_Seat)
+            </td>
+            <td>
+                @*@Html.ActionLink("Book Now", "BookFlights");*@
+                @Html.ActionLink("Book Now", "BookFlights", new { id = item.Flightno });
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    <center>
+        <span class="alert-danger">@ViewBag.error</span>
+    </center>
+</p>
+<p>
+    @Html.ActionLink("Search More flights", "Index")
+</p>

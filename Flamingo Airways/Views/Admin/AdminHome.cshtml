@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "AdminHome";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>You are logged in as an Administrator</h2>
+<br />
+<hr />
+<br />
+<h4 style="display:inline">To view, edit or delete flight details, click here </h4>
+
+<div style="display:inline">@Html.ActionLink("Flight Details", "Index", "Admin") </div>
+<br />
+<br />
+<h4 style="display:inline">To view the reservations, click here</h4>
+
+<div style="display:inline">@Html.ActionLink("Flight Bookings", "ShowBookings", "Admin") </div>
+
+
+
+
+
+
+

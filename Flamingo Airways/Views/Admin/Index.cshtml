@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Flamingo_Airways.Models.AdminModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arrivaltime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departtime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seatingcap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arrivaltime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departtime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seatingcap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Edit", new {  id=item.FlightNo.Trim() }) |
+        
+            @Html.ActionLink("Delete", "Delete", new { id = item.FlightNo.Trim() });
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Back to home","AdminHome","Admin")
